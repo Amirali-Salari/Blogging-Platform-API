@@ -1,0 +1,22 @@
+{
+  "name": "blogging-platform-api",
+  "version": "0.0.1",
+  "description": "This project provides an API for personal blogging platform.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amirali-Salari/Blogging-Platform-API.git"
+  },
+  "keywords": [
+    "Blogging"
+  ],
+  "author": "Amirali-Salari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amirali-Salari/Blogging-Platform-API/issues"
+  },
+  "homepage": "https://github.com/Amirali-Salari/Blogging-Platform-API#readme"
+}
