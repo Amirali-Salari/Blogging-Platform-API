@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Amirali-Salari/Blogging-Platform-API/issues"
   },
-  "homepage": "https://github.com/Amirali-Salari/Blogging-Platform-API#readme"
+  "homepage": "https://github.com/Amirali-Salari/Blogging-Platform-API#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
 }
