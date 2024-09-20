@@ -1,10 +1,8 @@
 import { Router } from 'express';
+import { createPost } from '../Controllers/postController.js';
 
 const router = Router()
 
-router.post('/posts', (req, res) => {
-    console.log('Post request recived.')
-    console.log(req.body);
-})
+router.post('/posts', createPost)
 
 export { router }
