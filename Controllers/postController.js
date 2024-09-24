@@ -27,8 +27,9 @@ export const createPost = async (req, res) => {
   }
 };
 export const updatePost = async (req, res) => {
+  let article;
   try {
-    const article = await Blog.findById(req.params.postID);
+    article = await Blog.findById(req.params.postID);
 
     article.title = req.body.title;
     article.content = req.body.content;
@@ -51,13 +52,29 @@ export const updatePost = async (req, res) => {
         errors: errors,
       });
     }
-    if (error instanceof mongoose.Error.CastError) {
-      return res.status(404).json({ message: "Invalid post ID" });
+    if (!article) {
+      return res.status(404).json({ message: "The blog post was not found." });
     } else {
       return res.status(400).json({
         message: "UnexpectedError",
         errors: error,
       });
     }
+  }
+};
+export const deletePost = async (req, res) => {
+  try {
+    const article = await Blog.findByIdAndDelete(req.params.postID);
+
+    if (!article) {
+      return res.status(404).json({ message: "The blog post was not found." });
+    }
+
+    return res.status(204).send();
+  } catch (error) {
+    return res.status(400).json({
+      message: "UnexpectedError",
+      errors: error,
+    });
   }
 };
