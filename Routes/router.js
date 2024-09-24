@@ -1,8 +1,10 @@
-import { Router } from 'express';
-import { createPost } from '../Controllers/postController.js';
+import { Router } from "express";
+import { createPost, updatePost } from "../Controllers/postController.js";
 
-const router = Router()
+const router = Router();
 
-router.post('/posts', createPost)
+router.post("/posts", createPost);
 
-export { router }
+router.put("/posts/:postID", updatePost);
+
+export { router };
